@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  pulsar:
+    image: apachepulsar/pulsar:3.0.0
+    ports:
+      - 8080:8080
+      - 6650:6650
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER}/data:/pulsar/data
+      #- ${LOCAL_WORKSPACE_FOLDER}/data:/pulsar/conf
+    command: bin/pulsar standalone
